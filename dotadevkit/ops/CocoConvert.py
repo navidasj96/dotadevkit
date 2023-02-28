@@ -1,4 +1,4 @@
-import dota_utils as util
+import dotadevkit.misc.dota_utils as util
 import os
 import cv2
 import json
