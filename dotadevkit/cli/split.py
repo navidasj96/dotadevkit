@@ -9,7 +9,7 @@ from dotadevkit.ops import DataSplitter, ImgSplitter
 @click.argument("size", default=1024, required=False, type=int)
 @click.argument("overlap", default=100, required=False, type=int)
 @click.argument("threshold", default=0.7, required=False, type=float)
-@click.argument("scale", default=1.0, required=False, type=float)
+@click.argument("scale", type=float)
 @click.option("--padding", default=True, type=bool, help="Pads tiles to be of same size")
 @click.option("--images", is_flag=True, help="Splits only images")
 def split(src, dst, size, overlap, threshold, scale, padding, num_process, images):
@@ -52,7 +52,7 @@ def split(src, dst, size, overlap, threshold, scale, padding, num_process, image
             num_process=num_process,
         )
 
-    splitter.splitdata(scale)
+    splitter.splitdata(.5)
 
 
 if __name__ == "__main__":
